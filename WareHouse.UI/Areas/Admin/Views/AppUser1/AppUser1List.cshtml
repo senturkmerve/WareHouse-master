@@ -1,0 +1,73 @@
+﻿
+@{
+                /**/
+
+                ViewBag.Title = "AppUser1List";
+                Layout = "~/Areas/Admin/Views/AppUser1/AddAppUser1.cshtml";
+}
+
+<h2>AppUserList</h2>
+@model List<WareHouse.UI.Areas.Admin.Models.DTO.AppUserDTO1>
+
+
+<link href="~/Content/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<script src="~/Content/script/jquery.dataTables.min.js"></script>
+<script src="~/Content/script/dataTables.bootstrap.min.js"></script>
+<section class="content-header">
+    <ol class="breadcrumb">
+        <li><a href="/Admin/Home/AdminHomeIndex"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/Admin/AppUser1/AddAppUser1">Add AppUser1</a></li>
+        <li class="active">AppUser List1</li>
+    </ol>
+</section>
+<br />
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">List of AppUsers</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>FirstName</th>
+                                <th>LastName</th>
+                                <th>Password</th>
+                                <th>Email</th>
+                                <th>UserName</th>
+                                <th>FullName</th>
+                                <th>Role</th>
+                                <th>Gender</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>@item.FirstName</td>
+                                <td>@item.LastName</td>
+                                <td>@item.Password</td>
+                                <td>@item.Email</td>
+                                <td>@item.UserName</td>
+                                <td>@item.FullName</td>
+                                <td>@item.Role</td>
+                                <td>@item.Gender</td>
+
+
+
+                                <td><a href="/Admin/AppUser1/UpdateAppUser1/@item.ID" type="button" class="btn btn-block btn-warning">Update</a></td>
+                                <td><a href="/Admin/AppUser1/DeleteAppUser1/@item.ID" type="button" class="btn btn-block btn-danger">Delete</a></td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

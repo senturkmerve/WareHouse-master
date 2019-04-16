@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "UpdateAppUser";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage.cshtml";
+}
+
+<h2>UpdateAppUser</h2>
+
+
+@model WareHouse.UI.Areas.Admin.Models.DTO.UserDTO
+<section class="content-header">
+    <ol class="breadcrumb">
+        <li><a href="/Admin/Home/AdminHomeIndex"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/Admin/AppUserr/AddUser">Add User</a></li>
+        <li><a href="/Admin/Category/CategoryList">AppUser List</a></li>
+        <li class="active">Update AppUser</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Update AppUser</h3>
+                </div>
+                <form action="/Admin/AppUserr/UpdateAppUser" method="post" enctype="multipart/form-data" role="form">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="text">FirstName</label>
+                            <input type="text" name="FirstName" value="@Model.FirstName" class="form-control" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="text">LastName</label>
+                            <input type="text" name="LastName" value="@Model.LastName" class="form-control" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="text">LastName</label>
+                            <input type="text" name="LastName" value="@Model.LastName" class="form-control" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="text">UserName</label>
+                            <input type="text" name="UserName" value="@Model.UserName" class="form-control" placeholder="User Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="text">Email</label>
+                            <input type="text" name="Email" value="@Model.Email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="text">Password</label>
+                            <input type="text" name="Password" value="@Model.Password" class="form-control" placeholder="Password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="text">Gender</label>
+                            <input type="text" name="Gender" value="@Model.Gender" class="form-control" placeholder="Gender">
+                        </div>
+                        <div class="form-group">
+                            <label for="text">Role</label>
+                            <input type="text" name="Role" value="@Model.Role" class="form-control" placeholder="Role">
+                        </div>
+
+                    </div>
+                    <input type="text" style="visibility:hidden" name="ID" value="@Model.ID" />
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
